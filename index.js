@@ -3,8 +3,17 @@ const path = require('path');
 const falcorExpress = require('falcor-express');
 const Router = require('falcor-router');
 const debug = require('debug')('supersonic-lobster:index');
+const index = require('./routes/index');
 
 const app = express();
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use(express.static(path.join(__dirname, '/public')));
+
+app.use('/', index);
+
 app.use(require('express-favicon-short-circuit'));
 
 app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-disable-line no-unused-vars, arrow-body-style
@@ -15,8 +24,6 @@ app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-d
     }
   ]);
 }));
-
-app.use(express.static(path.join(__dirname, '/public')));
 
 const port = process.env.PORT || 3000;
 const server = app.listen(port);
