@@ -1,0 +1,22 @@
+{
+  "name": "supersonic-lobster",
+  "version": "1.0.0",
+  "description": "Express - Falcor - React web app (maybe boilerplate)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattiaerre/supersonic-lobster.git"
+  },
+  "author": {
+    "name": "Mattia Richetto",
+    "email": "mattia.richetto@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattiaerre/supersonic-lobster/issues"
+  },
+  "homepage": "https://github.com/mattiaerre/supersonic-lobster#readme"
+}
