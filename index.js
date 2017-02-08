@@ -5,6 +5,7 @@ const Router = require('falcor-router');
 const debug = require('debug')('supersonic-lobster:index');
 
 const app = express();
+app.use(require('express-favicon-short-circuit'));
 
 app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-disable-line no-unused-vars, arrow-body-style
   return new Router([
