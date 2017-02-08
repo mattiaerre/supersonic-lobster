@@ -4,8 +4,8 @@
   "description": "Express - Falcor - React web app (maybe boilerplate)",
   "main": "index.js",
   "scripts": {
-    "nodemon": "DEBUG=supersonic-lobster:* nodemon index.js",
-    "start": "node index.js",
+    "nodemon": "npm run webpack; DEBUG=supersonic-lobster:* nodemon index.js",
+    "start": "npm run webpack; node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack"
   },
