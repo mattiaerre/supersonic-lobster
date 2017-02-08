@@ -4,6 +4,8 @@
   "description": "Express - Falcor - React web app (maybe boilerplate)",
   "main": "index.js",
   "scripts": {
+    "nodemon": "DEBUG=supersonic-lobster:* nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +22,10 @@
   },
   "homepage": "https://github.com/mattiaerre/supersonic-lobster#readme",
   "dependencies": {
+    "debug": "^2.6.0",
     "express": "^4.14.1",
+    "falcor-express": "^0.1.4",
+    "falcor-router": "^0.7.0",
     "path": "^0.12.7"
   },
   "devDependencies": {
@@ -28,6 +33,7 @@
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "nodemon": "^1.11.0"
   }
 }
