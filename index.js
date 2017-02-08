@@ -19,8 +19,7 @@ app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-d
 app.use(express.static(path.join(__dirname, '/public')));
 
 const port = process.env.PORT || 3000;
-
-const server = app.listen(port); // eslint-disable-line no-unused-vars
+const server = app.listen(port);
 
 server.on('listening', () => {
   debug(`http://127.0.0.1:${port}`);
