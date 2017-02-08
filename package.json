@@ -18,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/mattiaerre/supersonic-lobster/issues"
   },
-  "homepage": "https://github.com/mattiaerre/supersonic-lobster#readme"
+  "homepage": "https://github.com/mattiaerre/supersonic-lobster#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0"
+  }
 }
