@@ -1,4 +1,4 @@
-import model from '../model';
+import model from './model';
 import * as types from '../constants/actionTypes';
 
 export const getGreeting = () => ( // eslint-disable-line

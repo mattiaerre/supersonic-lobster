@@ -21106,7 +21106,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getGreeting = undefined;
 
-var _model = __webpack_require__(187);
+var _model = __webpack_require__(391);
 
 var _model2 = _interopRequireDefault(_model);
 
@@ -21196,7 +21196,7 @@ var App = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'App' },
         _react2.default.createElement(_Message2.default, { message: this.props.greeting })
       );
     }
@@ -21225,31 +21225,7 @@ function mapDispatchToProps(dispatch) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(App);
 
 /***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _falcor = __webpack_require__(124);
-
-var _falcor2 = _interopRequireDefault(_falcor);
-
-var _falcorHttpDatasource = __webpack_require__(192);
-
-var _falcorHttpDatasource2 = _interopRequireDefault(_falcorHttpDatasource);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var model = new _falcor2.default.Model({ source: new _falcorHttpDatasource2.default('/model.json') });
-
-exports.default = model;
-
-/***/ }),
+/* 187 */,
 /* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -53139,8 +53115,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Message = function Message(_ref) {
   var message = _ref.message;
   return _react2.default.createElement(
-    'div',
-    null,
+    "div",
+    { className: "Message" },
     message
   );
 };
@@ -53150,6 +53126,31 @@ Message.propTypes = {
 };
 
 exports.default = Message;
+
+/***/ }),
+/* 391 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _falcor = __webpack_require__(124);
+
+var _falcor2 = _interopRequireDefault(_falcor);
+
+var _falcorHttpDatasource = __webpack_require__(192);
+
+var _falcorHttpDatasource2 = _interopRequireDefault(_falcorHttpDatasource);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var model = new _falcor2.default.Model({ source: new _falcorHttpDatasource2.default('/model.json') });
+
+exports.default = model;
 
 /***/ })
 /******/ ]);
