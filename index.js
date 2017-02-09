@@ -17,10 +17,12 @@ app.use('/', index);
 app.use(require('express-favicon-short-circuit'));
 
 app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-disable-line no-unused-vars, arrow-body-style
+  const GREETING = 'greeting';
   return new Router([
     {
-      route: 'greeting',
-      get: () => ({ path: ['greeting'], value: 'Hello from Falcor' })
+      route: GREETING,
+      get: () => ({ path: [GREETING], value: 'Hello from Falcor' })
+      // get: () => { throw new Error('NO GREETING BRO!'); }
     }
   ]);
 }));

@@ -21121,15 +21121,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var getGreeting = exports.getGreeting = function getGreeting() {
   return (// eslint-disable-line
     function (dispatch) {
-      _model2.default.get('greeting').then(function (response) {
+      var GREETING = 'greeting';
+      _model2.default.get(GREETING).then(function (response) {
         return dispatch({
           type: types.GET_GREETING_COMPLETED,
-          payload: response.json.greeting
+          payload: response.json[GREETING]
         });
-      }, function () {
+      }, function (error) {
         return dispatch({
           type: types.GET_GREETING_COMPLETED,
-          payload: 'Oh Noes!'
+          payload: 'Oh Noes!',
+          error: error
         });
       });
     }
@@ -21161,6 +21163,10 @@ var _greetingActions = __webpack_require__(185);
 
 var actions = _interopRequireWildcard(_greetingActions);
 
+var _Message = __webpack_require__(390);
+
+var _Message2 = _interopRequireDefault(_Message);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -21191,7 +21197,7 @@ var App = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
-        this.props.greeting
+        _react2.default.createElement(_Message2.default, { message: this.props.greeting })
       );
     }
   }]);
@@ -53112,6 +53118,38 @@ function symbolObservablePonyfill(root) {
 
 module.exports = __webpack_require__(184);
 
+
+/***/ }),
+/* 390 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(58);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Message = function Message(_ref) {
+  var message = _ref.message;
+  return _react2.default.createElement(
+    'div',
+    null,
+    message
+  );
+};
+
+Message.propTypes = {
+  message: _react.PropTypes.string.isRequired
+};
+
+exports.default = Message;
 
 /***/ })
 /******/ ]);

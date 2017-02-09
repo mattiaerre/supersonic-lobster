@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/greetingActions';
+import Message from '../../components/Message/Message';
 
 class App extends React.Component {
   componentDidMount() {
@@ -10,7 +11,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>{this.props.greeting}</div>
+      <div>
+        <Message message={this.props.greeting} />
+      </div>
     );
   }
 }

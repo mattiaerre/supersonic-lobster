@@ -3,14 +3,16 @@ import * as types from '../constants/actionTypes';
 
 export const getGreeting = () => ( // eslint-disable-line
   (dispatch) => {
-    model.get('greeting')
+    const GREETING = 'greeting';
+    model.get(GREETING)
       .then(
       response => (dispatch({
         type: types.GET_GREETING_COMPLETED,
-        payload: response.json.greeting
+        payload: response.json[GREETING]
       })),
-      () => (dispatch({
+      error => (dispatch({
         type: types.GET_GREETING_COMPLETED,
-        payload: 'Oh Noes!'
+        payload: 'Oh Noes!',
+        error
       })));
   });
