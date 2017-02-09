@@ -16,6 +16,10 @@ Express - Falcor - React web app (maybe boilerplate)
 
 [https://facebook.github.io/react/](https://facebook.github.io/react/)
 
+### How tos and tutorials
+
+[https://github.com/reactjs/redux/tree/master/examples/real-world/src](https://github.com/reactjs/redux/tree/master/examples/real-world/src)
+
 ### Similar projects
 
 [https://github.com/yudppp/react-starter-kit-with-falcor](https://github.com/yudppp/react-starter-kit-with-falcor)

@@ -1,14 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import model from './model';
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import App from './containers/App/App';
 
-model.get('greeting')
-  .then((response) => {
-    render(
-      <div>
-        <div>Hello from React</div>
-        <div>{response.json.greeting}</div>
-      </div>,
-      document.getElementById('app')
-    );
-  });
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+);
