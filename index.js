@@ -3,12 +3,16 @@ const path = require('path');
 const falcorExpress = require('falcor-express');
 const Router = require('falcor-router');
 const debug = require('debug')('supersonic-lobster:index');
+const falcorPostman = require('falcor-postman');
 const index = require('./routes/index');
 
 const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+
+const options = { middlewarePath: '/falcor-postman', falcorModelPath: '/model.json', app };
+app.use(falcorPostman(options));
 
 app.use(express.static(path.join(__dirname, '/public')));
 

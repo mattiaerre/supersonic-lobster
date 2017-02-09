@@ -21303,6 +21303,8 @@ var _reduxThunk = __webpack_require__(381);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
+var _reduxDevtoolsExtension = __webpack_require__(392);
+
 var _reducers = __webpack_require__(188);
 
 var _reducers2 = _interopRequireDefault(_reducers);
@@ -21310,7 +21312,7 @@ var _reducers2 = _interopRequireDefault(_reducers);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var configureStore = function configureStore(initialState) {
-  var store = (0, _redux.createStore)(_reducers2.default, initialState, (0, _redux.compose)((0, _redux.applyMiddleware)(_reduxThunk2.default, (0, _reduxLogger2.default)())));
+  var store = (0, _redux.createStore)(_reducers2.default, initialState, (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)(_reduxThunk2.default, (0, _reduxLogger2.default)())));
   return store;
 };
 
@@ -53151,6 +53153,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var model = new _falcor2.default.Model({ source: new _falcorHttpDatasource2.default('/model.json') });
 
 exports.default = model;
+
+/***/ }),
+/* 392 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var compose = __webpack_require__(72).compose;
+
+exports.__esModule = true;
+exports.composeWithDevTools = (
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ :
+    function() {
+      if (arguments.length === 0) return undefined;
+      if (typeof arguments[0] === 'object') return compose;
+      return compose.apply(null, arguments);
+    }
+);
+
+exports.devToolsEnhancer = (
+  typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ ?
+    window.__REDUX_DEVTOOLS_EXTENSION__ :
+    function() { return function(noop) { return noop; } }
+);
+
 
 /***/ })
 /******/ ]);
