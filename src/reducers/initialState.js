@@ -1,3 +1,7 @@
 export default {
-  greeting: ''
+  greeting: '',
+  apod: {
+    url: '',
+    explanation: ''
+  }
 };

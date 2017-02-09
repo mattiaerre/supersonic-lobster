@@ -11,8 +11,18 @@ const greetingReducer = (state = initialState.greeting, action) => {
   }
 };
 
+const apodReducer = (state = initialState.apod, action) => {
+  switch (action.type) {
+    case types.GET_APOD_COMPLETED:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const rootReducer = combineReducers({
-  greeting: greetingReducer
+  greeting: greetingReducer,
+  apod: apodReducer
 });
 
 export default rootReducer;

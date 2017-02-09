@@ -20,13 +20,34 @@ app.use('/', index);
 
 app.use(require('express-favicon-short-circuit'));
 
+const apodSample = require('./falcor-routes/apod-sample');
+
 app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-disable-line no-unused-vars, arrow-body-style
   const GREETING = 'greeting';
+  const APOD = 'apod';
   return new Router([
     {
       route: GREETING,
       get: () => ({ path: [GREETING], value: 'Hello from Falcor' })
       // get: () => { throw new Error('NO GREETING BRO!'); }
+    },
+    {
+      route: APOD,
+      get: () => {
+        const results = [];
+
+        results.push({
+          path: [APOD, 'explanation'],
+          value: apodSample.explanation
+        });
+
+        results.push({
+          path: [APOD, 'url'],
+          value: apodSample.url
+        });
+
+        return results;
+      }
     }
   ]);
 }));

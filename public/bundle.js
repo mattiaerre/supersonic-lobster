@@ -14931,7 +14931,8 @@ module.exports = getIteratorFn;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var GET_GREETING_COMPLETED = exports.GET_GREETING_COMPLETED = 'GET_GREETING_COMPLETED'; // eslint-disable-line
+var GET_GREETING_COMPLETED = exports.GET_GREETING_COMPLETED = 'GET_GREETING_COMPLETED';
+var GET_APOD_COMPLETED = exports.GET_APOD_COMPLETED = 'GET_APOD_COMPLETED';
 
 /***/ }),
 /* 117 */
@@ -21161,13 +21162,11 @@ var _redux = __webpack_require__(72);
 
 var _greetingActions = __webpack_require__(185);
 
-var actions = _interopRequireWildcard(_greetingActions);
+var _apodActions = __webpack_require__(393);
 
 var _Message = __webpack_require__(390);
 
 var _Message2 = _interopRequireDefault(_Message);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21190,14 +21189,16 @@ var App = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.props.actions.getGreeting();
+      this.props.actions.getApod();
     }
   }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'App' },
-        _react2.default.createElement(_Message2.default, { message: this.props.greeting })
+        { className: 'App', style: { backgroundImage: 'url(\'' + this.props.apod.url + '\')' } },
+        _react2.default.createElement(_Message2.default, { message: this.props.greeting }),
+        _react2.default.createElement(_Message2.default, { message: this.props.apod.explanation })
       );
     }
   }]);
@@ -21205,20 +21206,26 @@ var App = function (_React$Component) {
   return App;
 }(_react2.default.Component);
 
+/* eslint-disable react/forbid-prop-types */
+
+
 App.propTypes = {
   greeting: _react.PropTypes.string.isRequired,
-  actions: _react.PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+  apod: _react.PropTypes.object.isRequired,
+  actions: _react.PropTypes.object.isRequired
 };
+/* eslint-enable */
 
 function mapStateToProps(state) {
   return {
-    greeting: state.greeting
+    greeting: state.greeting,
+    apod: state.apod
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: (0, _redux.bindActionCreators)(actions, dispatch)
+    actions: (0, _redux.bindActionCreators)({ getGreeting: _greetingActions.getGreeting, getApod: _apodActions.getApod }, dispatch)
   };
 }
 
@@ -21262,8 +21269,21 @@ var greetingReducer = function greetingReducer() {
   }
 };
 
+var apodReducer = function apodReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _initialState2.default.apod;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case types.GET_APOD_COMPLETED:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 var rootReducer = (0, _redux.combineReducers)({
-  greeting: greetingReducer
+  greeting: greetingReducer,
+  apod: apodReducer
 });
 
 exports.default = rootReducer;
@@ -21279,7 +21299,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = {
-  greeting: ''
+  greeting: '',
+  apod: {
+    url: '',
+    explanation: ''
+  }
 };
 
 /***/ }),
@@ -53180,6 +53204,50 @@ exports.devToolsEnhancer = (
     function() { return function(noop) { return noop; } }
 );
 
+
+/***/ }),
+/* 393 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getApod = undefined;
+
+var _model = __webpack_require__(391);
+
+var _model2 = _interopRequireDefault(_model);
+
+var _actionTypes = __webpack_require__(116);
+
+var types = _interopRequireWildcard(_actionTypes);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var getApod = exports.getApod = function getApod() {
+  return (// eslint-disable-line
+    function (dispatch) {
+      var APOD = 'apod';
+      _model2.default.get([APOD, ['explanation', 'url']]).then(function (response) {
+        return dispatch({
+          type: types.GET_APOD_COMPLETED,
+          payload: response.json[APOD]
+        });
+      }, function (error) {
+        return dispatch({
+          type: types.GET_APOD_COMPLETED,
+          payload: 'Oh Noes!',
+          error: error
+        });
+      });
+    }
+  );
+};
 
 /***/ })
 /******/ ]);

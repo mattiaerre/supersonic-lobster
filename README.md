@@ -22,6 +22,8 @@ Express - Falcor - React web app (maybe boilerplate)
 
 - [https://facebook.github.io/jest/docs/tutorial-react.html#content](https://facebook.github.io/jest/docs/tutorial-react.html#content)
 
+- [http://www.sketchingwithcss.com/samplechapter/cheatsheet.html](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
+
 ### Similar projects
 
 - [https://github.com/yudppp/react-starter-kit-with-falcor](https://github.com/yudppp/react-starter-kit-with-falcor)
