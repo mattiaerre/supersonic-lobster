@@ -1,0 +1,6 @@
+exports[`<Message /> renders correctly 1`] = `
+<div
+  className="Message">
+  Hello from Jest
+</div>
+`;

@@ -24,6 +24,8 @@ Express - Falcor - React web app (maybe boilerplate)
 
 - [http://www.sketchingwithcss.com/samplechapter/cheatsheet.html](http://www.sketchingwithcss.com/samplechapter/cheatsheet.html)
 
+- [https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
+
 ### Similar projects
 
 - [https://github.com/yudppp/react-starter-kit-with-falcor](https://github.com/yudppp/react-starter-kit-with-falcor)
