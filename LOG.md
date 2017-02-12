@@ -1,5 +1,9 @@
 # Log
 
+## Day 3 (02/11/2016)
+
+- [https://twitter.com/mattiaerre/status/830624742197514240](https://twitter.com/mattiaerre/status/830624742197514240)
+
 ## Day 2 (02/08/2016)
 
 - [https://twitter.com/mattiaerre/status/829579914244337664](https://twitter.com/mattiaerre/status/829579914244337664)
