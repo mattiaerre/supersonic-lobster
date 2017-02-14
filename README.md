@@ -1,6 +1,6 @@
 # supersonic-lobster
 
-Express - Falcor - React web app (maybe boilerplate)
+Express - Falcor - React web app
 
 ## Board
 

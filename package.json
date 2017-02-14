@@ -1,7 +1,7 @@
 {
   "name": "supersonic-lobster",
   "version": "1.0.0",
-  "description": "Express - Falcor - React web app (maybe boilerplate)",
+  "description": "Express - Falcor - React web app",
   "main": "index.js",
   "scripts": {
     "nodemon": "DEBUG=supersonic-lobster:* nodemon index.js",
