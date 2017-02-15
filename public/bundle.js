@@ -21226,16 +21226,22 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Message = function Message(_ref) {
-  var message = _ref.message;
+  var message = _ref.message,
+      className = _ref.className;
   return _react2.default.createElement(
-    "div",
-    { className: "Message" },
+    'div',
+    { className: 'Message ' + className },
     message
   );
 };
 
 Message.propTypes = {
-  message: _react.PropTypes.string.isRequired
+  message: _react.PropTypes.string.isRequired,
+  className: _react.PropTypes.string
+};
+
+Message.defaultProps = {
+  className: ''
 };
 
 exports.default = Message;
@@ -21289,17 +21295,25 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.actions.getGreeting();
-      this.props.actions.getApod();
+      var actions = this.props.actions;
+
+
+      actions.getGreeting();
+      actions.getApod();
     }
   }, {
     key: 'render',
     value: function render() {
+      var _props = this.props,
+          greeting = _props.greeting,
+          apod = _props.apod;
+
+
       return _react2.default.createElement(
         'div',
-        { className: 'App', style: { backgroundImage: 'url(\'' + this.props.apod.url + '\')' } },
-        _react2.default.createElement(_Message2.default, { message: this.props.greeting }),
-        _react2.default.createElement(_Message2.default, { message: this.props.apod.explanation })
+        { className: 'App', style: { backgroundImage: 'url(\'' + apod.url + '\')' } },
+        _react2.default.createElement(_Message2.default, { message: greeting }),
+        _react2.default.createElement(_Message2.default, { message: apod.explanation, className: 'hide' })
       );
     }
   }]);

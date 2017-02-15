@@ -20,3 +20,7 @@ body {
    flex-direction: column;
    align-items: flex-start;
 }
+
+.hide {
+  display: none;
+}

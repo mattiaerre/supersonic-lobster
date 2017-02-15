@@ -7,15 +7,19 @@ import Message from '../../components/Message/Message';
 
 class App extends React.Component {
   componentDidMount() {
-    this.props.actions.getGreeting();
-    this.props.actions.getApod();
+    const { actions } = this.props;
+
+    actions.getGreeting();
+    actions.getApod();
   }
 
   render() {
+    const { greeting, apod } = this.props;
+
     return (
-      <div className="App" style={{ backgroundImage: `url('${this.props.apod.url}')` }}>
-        <Message message={this.props.greeting} />
-        <Message message={this.props.apod.explanation} />
+      <div className="App" style={{ backgroundImage: `url('${apod.url}')` }}>
+        <Message message={greeting} />
+        <Message message={apod.explanation} className="hide" />
       </div >
     );
   }
