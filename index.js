@@ -18,7 +18,7 @@ app.use(require('express-favicon-short-circuit'));
 
 const apodSample = require('./falcor-routes/apod-sample');
 
-app.use('/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-disable-line no-unused-vars, arrow-body-style
+app.use('/api/v1/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-disable-line no-unused-vars, arrow-body-style
   const GREETING = 'greeting';
   const APOD = 'apod';
   return new Router([

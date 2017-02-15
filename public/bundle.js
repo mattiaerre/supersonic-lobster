@@ -15256,7 +15256,7 @@ var _falcorHttpDatasource2 = _interopRequireDefault(_falcorHttpDatasource);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var model = new _falcor2.default.Model({ source: new _falcorHttpDatasource2.default('/model.json') });
+var model = new _falcor2.default.Model({ source: new _falcorHttpDatasource2.default('/api/v1/model.json') });
 
 exports.default = model;
 
