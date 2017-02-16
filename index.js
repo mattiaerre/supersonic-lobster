@@ -3,6 +3,7 @@ const path = require('path');
 const falcorExpress = require('falcor-express');
 const Router = require('falcor-router');
 const debug = require('debug')('supersonic-lobster:index');
+const falcorPostman = require('falcor-postman');
 const index = require('./routes/index');
 
 require('dotenv').config();
@@ -13,12 +14,15 @@ app.locals.pretty = true;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+app.use(require('express-favicon-short-circuit'));
+
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/node_modules')));
 
 app.use('/', index);
 
-app.use(require('express-favicon-short-circuit'));
+const options = { middlewarePath: '/falcor-postman', falcorModelPath: '/api/v1/model.json', app };
+app.use(falcorPostman(options));
 
 const apodSample = require('./falcor-routes/apod-sample');
 
