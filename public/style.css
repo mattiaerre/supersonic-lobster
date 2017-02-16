@@ -33,10 +33,6 @@ body {
   align-items: center;
 }
 
-.hide {
-  display: none;
-}
-
 footer {
   border: 2px solid #EEE;
   background-color: mediumseagreen;
@@ -45,4 +41,29 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: right;
+}
+
+.error-message {
+  background-color: white;
+  opacity: 0.9;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.error-message :first-child {
+  color: purple;
+  position: relative;
+  top: -25%;
+}
+
+.hide {
+  display: none;
 }

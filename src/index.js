@@ -16,25 +16,27 @@ if (app.dataset && app.dataset.ocRegistryBaseUrl) {
   });
 }
 
-const events = window.oc.events;
+if (window.oc && window.oc.events) {
+  const events = window.oc.events;
 
-events.on('oc-date-time-now:ready', () => {
-  events.fire('supersonic-lobster:counter', store.getState().counter);
-});
-
-events.on('oc-date-time-now:increase', (e, data) => {
-  store.dispatch({
-    type: types.SET_COUNTER,
-    payload: data
+  events.on('oc-date-time-now:ready', () => {
+    events.fire('supersonic-lobster:counter', store.getState().counter);
   });
-});
 
-events.on('oc-date-time-now:decrease', (e, data) => {
-  store.dispatch({
-    type: types.SET_COUNTER,
-    payload: data
+  events.on('oc-date-time-now:increase', (e, data) => {
+    store.dispatch({
+      type: types.SET_COUNTER,
+      payload: data
+    });
   });
-});
+
+  events.on('oc-date-time-now:decrease', (e, data) => {
+    store.dispatch({
+      type: types.SET_COUNTER,
+      payload: data
+    });
+  });
+}
 // /OC init
 
 render(

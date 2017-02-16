@@ -4,7 +4,6 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="style.css", rel="stylesheet")
-    script(src=ocRegistryBaseUrl + "/oc-client/client.js")
     script(src="feature-toggle/dist/feature-toggle-client.js")
     title= title
   body
@@ -14,5 +13,10 @@ html(lang="en")
       div
         a(href="https://twitter.com/mattiaerre" target="_blank") @mattiaerre
       div= title
+    #error-message(class="hide error-message")
+      div
+        div Oh Noes!
+        div
+          a(href="/") &#x21bb;
     script(src="bundle.js")
     script(src="index.js")
