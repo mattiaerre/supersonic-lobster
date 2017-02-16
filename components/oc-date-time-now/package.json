@@ -1,0 +1,32 @@
+{
+  "name": "oc-date-time-now",
+  "description": "oc-date-time-now",
+  "version": "1.3.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattiaerre/supersonic-lobster/tree/spike-oc/components/oc-date-time-now"
+  },
+  "author": {
+    "name": "Mattia Richetto",
+    "email": "mattia.richetto@gmail.com"
+  },
+  "oc": {
+    "files": {
+      "data": "server.js",
+      "template": {
+        "src": "template.html",
+        "type": "handlebars"
+      },
+      "static": [
+        "public"
+      ]
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0"
+  },
+  "scripts": {
+    "index-toes5": "babel src/index.js --out-file public/index.js"
+  }
+}

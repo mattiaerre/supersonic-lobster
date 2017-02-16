@@ -28,6 +28,8 @@ Express - Falcor - React web app
 
 - [https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
 
+- [http://redux.js.org/docs/advanced/Middleware.html](http://redux.js.org/docs/advanced/Middleware.html)
+
 ### Similar projects
 
 - [https://github.com/yudppp/react-starter-kit-with-falcor](https://github.com/yudppp/react-starter-kit-with-falcor)

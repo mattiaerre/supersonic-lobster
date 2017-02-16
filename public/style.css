@@ -3,22 +3,34 @@ body {
   background-color: palegoldenrod;
 }
 
-.Message {
-  padding: 0.5em;
-  margin: 2em;
+.Message, .Counter {
   background-color: #EEE;
-  
+  padding: 0.5em;
+  margin: 0.5em;
 }
 
 .App {
-  padding: 2em;
   border: 2px solid #EEE;
+  padding: 2em;
 }
 
 .App {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.OC {
+  color: blue;
+  background-color: #E99;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.OC > oc-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hide {
