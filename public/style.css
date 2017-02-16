@@ -36,3 +36,13 @@ body {
 .hide {
   display: none;
 }
+
+footer {
+  border: 2px solid #EEE;
+  background-color: mediumseagreen;
+  padding: 0.5em;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
