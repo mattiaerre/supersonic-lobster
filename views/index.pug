@@ -5,6 +5,7 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="style.css", rel="stylesheet")
     script(src="feature-toggle/dist/feature-toggle-client.js")
+    script(src=ocRegistryBaseUrl + "/oc-client/client.js" id="script-oc-registry-base-url" data-onerror="false" onerror="(() => { document.getElementById('script-oc-registry-base-url').setAttribute('data-onerror', true); })();")
     title= title
   body
     h1=title

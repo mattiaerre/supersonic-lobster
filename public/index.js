@@ -1,13 +1,7 @@
 ((setFeatures) => {
-  const app = document.getElementById('app');
-  if (app.dataset && app.dataset.ocRegistryBaseUrl) {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = `${app.dataset.ocRegistryBaseUrl}/oc-client/client.js`;
-    script.onerror = () => {
-      document.getElementById('error-message').classList.remove('hide');
-    };
-    document.getElementsByTagName('head')[0].appendChild(script);
+  const onerror = document.getElementById('script-oc-registry-base-url').getAttribute('data-onerror') === 'true';
+  if (onerror) {
+    document.getElementById('error-message').classList.remove('hide');
   }
 
   // doc: https://github.com/ericelliott/feature-toggle
