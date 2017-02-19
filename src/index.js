@@ -16,10 +16,9 @@ if (app.dataset && app.dataset.ocRegistryBaseUrl) {
   });
 }
 
-if (window.oc && window.oc.events) {
+if (window.oc && window.oc.events && window.oc.events.on && window.oc.events.fire) {
   const events = window.oc.events;
 
-  console.log('window.oc.events:', window.oc.events); // eslint-disable-line no-console
   events.on('oc-date-time-now:ready', () => {
     events.fire('supersonic-lobster:counter', store.getState().counter);
   });
