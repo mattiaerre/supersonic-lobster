@@ -47,6 +47,8 @@ yarn nodemon
 
 - [http://redux.js.org/docs/advanced/Middleware.html](http://redux.js.org/docs/advanced/Middleware.html)
 
+- [http://moduscreate.com/optimizing-react-es6-webpack-production-build/](http://moduscreate.com/optimizing-react-es6-webpack-production-build/)
+
 ### Similar projects
 
 - [https://github.com/yudppp/react-starter-kit-with-falcor](https://github.com/yudppp/react-starter-kit-with-falcor)

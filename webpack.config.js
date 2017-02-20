@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  devtool: 'cheap-module-source-map',
   entry: ['./src/index'],
   output: {
     filename: 'bundle.js',
@@ -18,5 +19,11 @@ module.exports = {
         loaders: ['json-loader'],
         include: path.join(__dirname, 'src')
       }]
+  },
+  resolve: {
+    alias: {
+      react: 'react-lite',
+      'react-dom': 'react-lite'
+    }
   }
 };

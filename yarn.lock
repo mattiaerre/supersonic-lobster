@@ -3985,6 +3985,10 @@ react-dom@^15.3.1, react-dom@^15.4.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
 
+react-lite@^0.15.33:
+  version "0.15.33"
+  resolved "https://registry.yarnpkg.com/react-lite/-/react-lite-0.15.33.tgz#43d08c7f873ca785301ae55b08e76bfb9d1f2e0b"
+
 react-redux@^5.0.2:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.2.tgz#3d9878f5f71c6fafcd45de1fbb162ea31f389814"
