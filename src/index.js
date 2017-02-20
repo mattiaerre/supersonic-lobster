@@ -2,42 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import * as types from './constants/actionTypes';
+import ocInit from './oc-init';
 import App from './containers/App/App';
 
 const store = configureStore();
-
-// OC init todo: move into a separate file
-const app = document.getElementById('app');
-if (app.dataset && app.dataset.ocRegistryBaseUrl) {
-  store.dispatch({
-    type: types.GET_OC_REGISTRY_BASE_URL,
-    payload: app.dataset.ocRegistryBaseUrl
-  });
-}
-
-if (window.oc && window.oc.events && window.oc.events.on && window.oc.events.fire) {
-  const events = window.oc.events;
-
-  events.on('oc-date-time-now:ready', () => {
-    events.fire('supersonic-lobster:counter', store.getState().counter);
-  });
-
-  events.on('oc-date-time-now:increase', (e, data) => {
-    store.dispatch({
-      type: types.SET_COUNTER,
-      payload: data
-    });
-  });
-
-  events.on('oc-date-time-now:decrease', (e, data) => {
-    store.dispatch({
-      type: types.SET_COUNTER,
-      payload: data
-    });
-  });
-}
-// /OC init
+ocInit(store);
 
 render(
   <Provider store={store}>
