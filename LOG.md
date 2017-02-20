@@ -32,6 +32,6 @@
 
 - [https://twitter.com/mattiaerre/status/829220365574479872](https://twitter.com/mattiaerre/status/829220365574479872)
 
-## Day X (DD/MM/YYYY)
+## Day X (MM/DD/YYYY)
 
 - supersonic-lobster day X: add message here http://bit.ly/2k19Q2y
