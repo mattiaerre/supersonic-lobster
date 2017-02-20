@@ -1,24 +1,7 @@
 import { combineReducers } from 'redux';
+import { reducer as falcorReducer } from 'redux-falcor';
 import initialState from './initialState';
 import * as types from '../constants/actionTypes';
-
-const greetingReducer = (state = initialState.greeting, action) => {
-  switch (action.type) {
-    case types.GET_GREETING_COMPLETED:
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-const apodReducer = (state = initialState.apod, action) => {
-  switch (action.type) {
-    case types.GET_APOD_COMPLETED:
-      return action.payload;
-    default:
-      return state;
-  }
-};
 
 const ocRegistryBaseUrlReducer = (state = initialState.ocRegistryBaseUrl, action) => {
   switch (action.type) {
@@ -38,9 +21,10 @@ const counterReducer = (state = initialState.counter, action) => {
   }
 };
 
+const falcorReducerWrapper = (state = initialState.falcor, action) => (falcorReducer(state, action)); // eslint-disable-line max-len
+
 const rootReducer = combineReducers({
-  greeting: greetingReducer,
-  apod: apodReducer,
+  falcor: falcorReducerWrapper,
   ocRegistryBaseUrl: ocRegistryBaseUrlReducer,
   counter: counterReducer
 });

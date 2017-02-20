@@ -1,9 +1,11 @@
 export default {
-  greeting: '',
-  apod: {
-    url: '',
-    explanation: ''
-  },
   ocRegistryBaseUrl: '',
-  counter: 815
+  counter: 815,
+  falcor: {
+    greeting: '',
+    apod: {
+      explanation: '',
+      url: ''
+    }
+  }
 };

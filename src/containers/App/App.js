@@ -1,8 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { reduxFalcor } from 'redux-falcor';
 import { bindActionCreators } from 'redux';
-import { getGreeting } from '../../actions/greetingActions';
-import { getApod } from '../../actions/apodActions';
 import { renderUnloadedComponents } from '../../actions/ocActions';
 import Message from '../../components/Message/Message';
 import OC from '../../components/OC/OC';
@@ -11,10 +10,11 @@ import Counter from '../../components/Counter/Counter';
 class App extends React.Component {
   componentDidMount() {
     const { actions } = this.props;
-
-    actions.getGreeting();
-    actions.getApod();
     actions.renderUnloadedComponents();
+  }
+
+  fetchFalcorDeps() {
+    return this.props.falcor.get(['greeting'], ['apod', ['explanation', 'url']]);
   }
 
   render() {
@@ -37,14 +37,15 @@ App.propTypes = {
   apod: PropTypes.object.isRequired,
   ocRegistryBaseUrl: PropTypes.string.isRequired,
   counter: PropTypes.number.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  falcor: PropTypes.object.isRequired
 };
 /* eslint-enable */
 
 function mapStateToProps(state) {
   return {
-    greeting: state.greeting,
-    apod: state.apod,
+    greeting: state.falcor.greeting,
+    apod: state.falcor.apod,
     ocRegistryBaseUrl: state.ocRegistryBaseUrl,
     counter: state.counter
   };
@@ -52,11 +53,11 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ getGreeting, getApod, renderUnloadedComponents }, dispatch)
+    actions: bindActionCreators({ renderUnloadedComponents }, dispatch)
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(reduxFalcor(App));
