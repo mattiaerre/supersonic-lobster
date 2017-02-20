@@ -54,6 +54,7 @@
     "falcor-router": "^0.8.0",
     "feature-toggle": "^0.3.0",
     "jest": "^18.1.0",
+    "jest-fetch-mock": "1.0.5",
     "json-loader": "^0.5.4",
     "node-fetch": "^1.6.3",
     "nodemon": "^1.11.0",
@@ -68,5 +69,10 @@
     "redux-thunk": "^2.1.0",
     "rx": "^4.1.0",
     "webpack": "^2.2.1"
+  },
+  "jest": {
+    "setupFiles": [
+      "./setupJest.js"
+    ]
   }
 }

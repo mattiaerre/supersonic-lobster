@@ -1,4 +1,8 @@
-const fetch = require('node-fetch');
+// info: maybe move this into './index'?
+let fetch = global.fetch;
+if (!fetch) {
+  fetch = require('node-fetch'); // eslint-disable-line global-require
+}
 
 const APOD = 'apod';
 const EXPLANATION = 'explanation';

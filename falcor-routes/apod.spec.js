@@ -1,8 +1,10 @@
-const apod = require('./apod');
-
 require('babel-core/register');
 require('babel-polyfill');
-require('dotenv').config();
+
+const apod = require('./apod');
+const apodSample = require('./apod-sample');
+
+fetch.mockResponse(JSON.stringify(apodSample));
 
 const scenarios = [
   {
@@ -21,13 +23,20 @@ const scenarios = [
 
 scenarios.forEach((scenario) => {
   describe('given apod route', () => {
-    const route = apod(process.env.NASA_API_KEY)[0];
+    const route = apod('TEST_KEY')[0];
+
     describe(`when pathSet === "${JSON.stringify(scenario.pathSet)}"`, () => {
       it(`then results.length === "${scenario.length}"`, async () => {
         const results = await route.get(scenario.pathSet);
         expect(results.length).toBe(scenario.length);
-        // todo: add check against results objects
       });
     });
   });
+});
+
+test('exception', async () => { // info: I am not sure why Jest is not displaying this test
+  fetch.mockResponse('I\'m not a JSON');
+  const route = apod('TEST_KEY')[0];
+  const results = await route.get(['apod', ['url']]);
+  expect(results.length).toBe(0);
 });
