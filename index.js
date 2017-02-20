@@ -5,7 +5,10 @@ const Router = require('falcor-router');
 const debug = require('debug')('supersonic-lobster:index');
 const falcorPostman = require('falcor-postman');
 const index = require('./routes/index');
+const falcorRoutes = require('./falcor-routes');
 
+require('babel-core/register');
+require('babel-polyfill');
 require('dotenv').config();
 
 const app = express();
@@ -24,36 +27,8 @@ app.use('/', index);
 const options = { middlewarePath: '/falcor-postman', falcorModelPath: '/api/v1/model.json', app };
 app.use(falcorPostman(options));
 
-const apodSample = require('./falcor-routes/apod-sample');
-
 app.use('/api/v1/model.json', falcorExpress.dataSourceRoute((req, res) => { // eslint-disable-line no-unused-vars, arrow-body-style
-  const GREETING = 'greeting';
-  const APOD = 'apod';
-  return new Router([
-    {
-      route: GREETING,
-      get: () => ({ path: [GREETING], value: 'Hello from Falcor' })
-      // get: () => { throw new Error('NO GREETING BRO!'); }
-    },
-    {
-      route: APOD,
-      get: () => {
-        const results = [];
-
-        results.push({
-          path: [APOD, 'explanation'],
-          value: apodSample.explanation
-        });
-
-        results.push({
-          path: [APOD, 'url'],
-          value: apodSample.url
-        });
-
-        return results;
-      }
-    }
-  ]);
+  return new Router(falcorRoutes());
 }));
 
 const port = process.env.PORT || 3000;
