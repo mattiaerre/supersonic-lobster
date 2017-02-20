@@ -6,8 +6,9 @@ import model from './actions/model';
 import configureStore from './store/configureStore';
 import ocInit from './oc-init';
 import App from './containers/App/App';
+import initialState from './reducers/initialState';
 
-const store = configureStore();
+const store = configureStore(initialState);
 ocInit(store);
 
 render(

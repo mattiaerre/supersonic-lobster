@@ -21,10 +21,8 @@ const counterReducer = (state = initialState.counter, action) => {
   }
 };
 
-const falcorReducerWrapper = (state = initialState.falcor, action) => (falcorReducer(state, action)); // eslint-disable-line max-len
-
 const rootReducer = combineReducers({
-  falcor: falcorReducerWrapper,
+  falcor: falcorReducer,
   ocRegistryBaseUrl: ocRegistryBaseUrlReducer,
   counter: counterReducer
 });
