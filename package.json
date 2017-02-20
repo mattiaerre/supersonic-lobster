@@ -5,7 +5,7 @@
     "node": "6.X",
     "npm": "3.X"
   },
-  "description": "Express - Falcor - React web app",
+  "description": "Express - Falcor - React - Redux web app",
   "main": "index.js",
   "scripts": {
     "nodemon": "DEBUG=supersonic-lobster:* nodemon index.js",

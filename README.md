@@ -1,10 +1,23 @@
 # supersonic-lobster
 
-Express - Falcor - React web app
+Express - Falcor - React - Redux web app
 
 ## Board
 
 - [https://github.com/mattiaerre/supersonic-lobster/projects/1](https://github.com/mattiaerre/supersonic-lobster/projects/1)
+
+## How to
+
+### Run locally
+
+#### Dev
+
+```bash
+yarn
+yarn oc
+yarn webpack -- --watch
+yarn nodemon
+```
 
 ## Resources
 
@@ -15,6 +28,10 @@ Express - Falcor - React web app
 - [https://netflix.github.io/falcor/](https://netflix.github.io/falcor/)
 
 - [https://facebook.github.io/react/](https://facebook.github.io/react/)
+
+- [http://redux.js.org/](http://redux.js.org/)
+
+- [https://github.com/ekosz/redux-falcor](https://github.com/ekosz/redux-falcor)
 
 - [https://github.com/opentable/oc](https://github.com/opentable/oc)
 
