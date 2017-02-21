@@ -3,7 +3,7 @@ const apod = require('./apod');
 
 const falcorRoutes = () => { // eslint-disable-line arrow-body-style
   return []
-    .concat(greeting())
+    .concat(greeting(process.env.GREETING))
     .concat(apod(process.env.NASA_API_KEY));
 };
 

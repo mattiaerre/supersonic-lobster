@@ -4,7 +4,9 @@ export default {
   falcor: {
     greeting: '',
     apod: {
+      date: '',
       explanation: '',
+      media_type: '',
       url: ''
     }
   }

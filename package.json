@@ -13,7 +13,8 @@
     "postinstall": "npm run webpack && npm run test",
     "start": "node index.js",
     "test": "jest --updateSnapshot --coverage",
-    "test:watch": "jest --watch",
+    "test:watch": "DEBUG=supersonic-lobster:* jest --watch",
+    "webpack:dev": "webpack",
     "webpack": "webpack --progress -p"
   },
   "repository": {

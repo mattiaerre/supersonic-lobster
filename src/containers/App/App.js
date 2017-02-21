@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { reduxFalcor } from 'redux-falcor';
 import { bindActionCreators } from 'redux';
 import { renderUnloadedComponents } from '../../actions/ocActions';
-import Message from '../../components/Message/Message';
-import OC from '../../components/OC/OC';
-import Counter from '../../components/Counter/Counter';
+import Layout from '../../components/Layout/Layout';
 
 class App extends React.Component {
   componentDidMount() {
@@ -14,40 +12,31 @@ class App extends React.Component {
   }
 
   fetchFalcorDeps() {
-    return this.props.falcor.get(['greeting'], ['apod', ['explanation', 'url']]);
+    const { falcor } = this.props;
+    return falcor.get(['apod', ['date', 'explanation', 'media_type', 'url']], ['greeting']);
   }
 
   render() {
-    const { greeting, apod } = this.props;
-
+    const { model } = this.props;
     return (
-      <div className="App" style={{ backgroundImage: `url('${apod.url}')` }}>
-        <Message message={greeting} />
-        <Message message={apod.explanation} className="hide" />
-        <OC href={`${this.props.ocRegistryBaseUrl}/oc-date-time-now/`} />
-        <Counter value={this.props.counter} />
+      <div className="App" style={{ backgroundImage: `url('${model.apod.url}')` }}>
+        <Layout {...this.props} />
       </div >
     );
   }
 }
 
-/* eslint-disable react/forbid-prop-types */
 App.propTypes = {
-  greeting: PropTypes.string.isRequired,
-  apod: PropTypes.object.isRequired,
-  ocRegistryBaseUrl: PropTypes.string.isRequired,
-  counter: PropTypes.number.isRequired,
-  actions: PropTypes.object.isRequired,
-  falcor: PropTypes.object.isRequired
+  actions: PropTypes.shape.isRequired,
+  falcor: PropTypes.shape.isRequired,
+  model: PropTypes.shape.isRequired
 };
-/* eslint-enable */
 
 function mapStateToProps(state) {
   return {
-    greeting: state.falcor.greeting,
-    apod: state.falcor.apod,
-    ocRegistryBaseUrl: state.ocRegistryBaseUrl,
-    counter: state.counter
+    counter: state.counter,
+    model: state.falcor,
+    ocRegistryBaseUrl: state.ocRegistryBaseUrl
   };
 }
 

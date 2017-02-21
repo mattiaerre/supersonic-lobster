@@ -2,22 +2,26 @@ require('babel-core/register');
 require('babel-polyfill');
 
 const apod = require('./apod');
-const apodSample = require('./apod-sample');
+const apodSample = require('./apod-sample-image');
 
 fetch.mockResponse(JSON.stringify(apodSample));
 
 const scenarios = [
   {
-    pathSet: ['apod', ['explanation', 'url']],
-    length: 2
+    pathSet: ['apod', ['date']],
+    resultPath: ['apod', 'date'],
   },
   {
     pathSet: ['apod', ['explanation']],
-    length: 1
+    resultPath: ['apod', 'explanation'],
+  },
+  {
+    pathSet: ['apod', ['media_type']],
+    resultPath: ['apod', 'media_type'],
   },
   {
     pathSet: ['apod', ['url']],
-    length: 1
+    resultPath: ['apod', 'url'],
   }
 ];
 
@@ -26,15 +30,16 @@ scenarios.forEach((scenario) => {
     const route = apod('TEST_KEY')[0];
 
     describe(`when pathSet === "${JSON.stringify(scenario.pathSet)}"`, () => {
-      it(`then results.length === "${scenario.length}"`, async () => {
+      it(`then results[0].path === "${JSON.stringify(scenario.resultPath)}"`, async () => {
         const results = await route.get(scenario.pathSet);
-        expect(results.length).toBe(scenario.length);
+        expect(results.length).toBe(1);
+        expect(results[0].path).toEqual(scenario.resultPath);
       });
     });
   });
 });
 
-test('exception', async () => { // info: I am not sure why Jest is not displaying this test
+test('falcor-routes:apod - exception', async () => { // info: I am not sure why Jest is not displaying this test
   fetch.mockResponse('I\'m not a JSON');
   const route = apod('TEST_KEY')[0];
   const results = await route.get(['apod', ['url']]);

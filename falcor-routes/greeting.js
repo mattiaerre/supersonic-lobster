@@ -1,10 +1,10 @@
 const GREETING = 'greeting';
 
-const routes = () => (
+const routes = greeting => (
   [
     {
       route: GREETING,
-      get: () => ({ path: [GREETING], value: 'Hello from Falcor' })
+      get: () => ({ path: [GREETING], value: greeting })
     }
   ]
 );
