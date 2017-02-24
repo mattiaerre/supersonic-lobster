@@ -1,3 +1,7 @@
+require('babel-core/register');
+require('babel-polyfill');
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const falcorExpress = require('falcor-express');
@@ -6,10 +10,6 @@ const debug = require('debug')('supersonic-lobster:index');
 const falcorPostman = require('falcor-postman');
 const index = require('./routes/index');
 const falcorRoutes = require('./falcor-routes');
-
-require('babel-core/register');
-require('babel-polyfill');
-require('dotenv').config();
 
 const app = express();
 app.locals.pretty = true;
