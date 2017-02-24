@@ -68,3 +68,14 @@ footer {
 .hide {
   display: none;
 }
+
+.what-did-you-do {
+  display: flex;
+  justify-content: flex-end;
+  color:darkred;
+}
+
+.what-did-you-do > span{
+  margin-left: 0.5ch;
+  padding: 0;
+}

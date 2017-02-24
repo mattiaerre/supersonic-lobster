@@ -13,6 +13,11 @@ html(lang="en")
     footer
       div
         a(href="https://twitter.com/mattiaerre" target="_blank") @mattiaerre
+      div.what-did-you-do
+        span What did you do
+        span
+          oc-component(href=`${ocRegistryBaseUrl}/oc-timeago/?start=2017-02-07`)
+        span today?
       div= title
     #error-message(class="hide error-message")
       div
