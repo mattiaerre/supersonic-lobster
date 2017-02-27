@@ -15,8 +15,8 @@ Express - Falcor - React - Redux web app
 ```bash
 yarn
 yarn oc
-yarn webpack -- --watch
 yarn nodemon
+yarn webpack:dev -- --watch
 ```
 
 ## Resources
