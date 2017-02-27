@@ -1,6 +1,6 @@
 {
   "name": "supersonic-lobster",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "engines": {
     "node": "6.X",
     "npm": "3.X"
