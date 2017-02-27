@@ -1,6 +1,6 @@
 # falcor-routes
 
-You can play with the endpoints and queries listed below using [falcor-postman](https://github.com/opentable/falcor-postman) at the following url:
+You can play with the endpoints and the queries listed below using [falcor-postman](https://github.com/opentable/falcor-postman) at the following url:
 
 [https://supersonic-lobster.herokuapp.com/falcor-postman/](https://supersonic-lobster.herokuapp.com/falcor-postman/)
 
