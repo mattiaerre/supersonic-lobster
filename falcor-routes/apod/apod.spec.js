@@ -19,7 +19,8 @@ describe('happy path', () => {
         expect(route.route).toMatchSnapshot();
       });
 
-      [DATE, COPYRIGHT, EXPLANATION, HDURL, MEDIA_TYPE, TITLE, URL].forEach((field) => {
+      const fields = [COPYRIGHT, DATE, EXPLANATION, HDURL, MEDIA_TYPE, TITLE, URL];
+      fields.forEach((field) => {
         test(`route.route to contain "${field}"`, () => {
           expect(route.route).toContain(field);
         });
@@ -33,6 +34,11 @@ describe('happy path', () => {
           const results = await route.get([APOD, [field]]);
           expect(results[0].value).toBeDefined();
         });
+      });
+
+      test(`route.get(${JSON.stringify([APOD, fields])}) to match snapshot`, async () => {
+        const results = await route.get([APOD, fields]);
+        expect(results).toMatchSnapshot();
       });
     });
   });
