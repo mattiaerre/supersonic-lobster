@@ -6,16 +6,19 @@ if (!fetch) {
 
 const debug = require('debug')('supersonic-lobster:falcor-routes/apod');
 
-const APOD = 'apod';
-const DATE = 'date';
-const EXPLANATION = 'explanation';
-const MEDIA_TYPE = 'media_type';
-const URL = 'url';
+const { APOD, COPYRIGHT, DATE, EXPLANATION, HDURL, MEDIA_TYPE, TITLE, URL } = require('./fields');
+
+const removeProtocol = (url) => {
+  if (url) {
+    return url.replace('http:', '').replace('https:', '');
+  }
+  return '';
+};
 
 const routes = apiKey => (
   [
     {
-      route: `${APOD}["${DATE}", "${EXPLANATION}", "${MEDIA_TYPE}", "${URL}"]`, // todo: test this property
+      route: `${APOD}["${DATE}", "${COPYRIGHT}", "${EXPLANATION}", "${HDURL}", "${MEDIA_TYPE}", "${TITLE}", "${URL}"]`,
       async get(pathSet) {
         const keys = pathSet[1]; // e.g.: ['explanation', 'url']
         const results = [];
@@ -24,6 +27,13 @@ const routes = apiKey => (
             return response.json();
           })
           .then((json) => {
+            if (keys.includes(COPYRIGHT)) {
+              results.push({
+                path: [APOD, COPYRIGHT],
+                value: json[COPYRIGHT] || ''
+              });
+            }
+
             if (keys.includes(DATE)) {
               results.push({
                 path: [APOD, DATE],
@@ -38,6 +48,13 @@ const routes = apiKey => (
               });
             }
 
+            if (keys.includes(HDURL)) {
+              results.push({
+                path: [APOD, HDURL],
+                value: removeProtocol(json[HDURL])
+              });
+            }
+
             if (keys.includes(MEDIA_TYPE)) {
               results.push({
                 path: [APOD, MEDIA_TYPE],
@@ -45,15 +62,22 @@ const routes = apiKey => (
               });
             }
 
+            if (keys.includes(TITLE)) {
+              results.push({
+                path: [APOD, TITLE],
+                value: json[TITLE]
+              });
+            }
+
             if (keys.includes(URL)) {
               results.push({
                 path: [APOD, URL],
-                value: json[URL].replace('http:', '')
+                value: removeProtocol(json[URL])
               });
             }
           })
-          .catch((ex) => {
-            debug('parsing failed', ex);
+          .catch((error) => {
+            debug('error:', error);
           });
         return results;
       }
