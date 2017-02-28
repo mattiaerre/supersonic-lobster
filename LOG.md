@@ -1,5 +1,9 @@
 # Log
 
+## Day 12 (02/27/2017)
+
+- [https://twitter.com/mattiaerre/status/836502246707736576](https://twitter.com/mattiaerre/status/836502246707736576)
+
 ## Day 11 (02/26/2017)
 
 - [https://twitter.com/mattiaerre/status/836094029485895680](https://twitter.com/mattiaerre/status/836094029485895680)
