@@ -12,8 +12,9 @@ class App extends React.Component {
 
   render() {
     const { model } = this.props;
+    const url = model.apod.url.replace('http://', '//').replace('https://', '//');
     return (
-      <div className="App" style={{ backgroundImage: `url('${model.apod.url}')` }}>
+      <div className="App" style={{ backgroundImage: `url('${url}')` }}>
         <Layout {...this.props} />
       </div >
     );
