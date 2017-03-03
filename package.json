@@ -8,6 +8,7 @@
   "description": "Express - Falcor - React - Redux web app",
   "main": "index.js",
   "scripts": {
+    "postinstall": "npm run bundle",
     "start": "node index.js",
     "start:dev": "DEBUG=supersonic-lobster:* nodemon index.js",
     "test": "jest --updateSnapshot --coverage",
@@ -35,7 +36,6 @@
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.3.2",
-    "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-polyfill": "^6.23.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.23.0",
