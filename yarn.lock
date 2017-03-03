@@ -1934,10 +1934,6 @@ esutils@^2.0.0, esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
 
-etag@~1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/etag/-/etag-1.7.0.tgz#03d30b5f67dd6e632d2945d30d6652731a34d5d8"
-
 etag@~1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.0.tgz#6f631aef336d6c46362b51764044ce216be3c051"
@@ -2001,38 +1997,7 @@ express-favicon-short-circuit@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/express-favicon-short-circuit/-/express-favicon-short-circuit-1.1.0.tgz#9baf7c735499e7188e99244e910045e8876b9188"
 
-express@^4.11.1, express@^4.14.0:
-  version "4.14.1"
-  resolved "https://registry.yarnpkg.com/express/-/express-4.14.1.tgz#646c237f766f148c2120aff073817b9e4d7e0d33"
-  dependencies:
-    accepts "~1.3.3"
-    array-flatten "1.1.1"
-    content-disposition "0.5.2"
-    content-type "~1.0.2"
-    cookie "0.3.1"
-    cookie-signature "1.0.6"
-    debug "~2.2.0"
-    depd "~1.1.0"
-    encodeurl "~1.0.1"
-    escape-html "~1.0.3"
-    etag "~1.7.0"
-    finalhandler "0.5.1"
-    fresh "0.3.0"
-    merge-descriptors "1.0.1"
-    methods "~1.1.2"
-    on-finished "~2.3.0"
-    parseurl "~1.3.1"
-    path-to-regexp "0.1.7"
-    proxy-addr "~1.1.3"
-    qs "6.2.0"
-    range-parser "~1.2.0"
-    send "0.14.2"
-    serve-static "~1.11.2"
-    type-is "~1.6.14"
-    utils-merge "1.0.0"
-    vary "~1.1.0"
-
-express@^4.15.0:
+express@^4.11.1, express@^4.14.0, express@^4.15.0:
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/express/-/express-4.15.0.tgz#8fb125829f70a04a59e1c40ceb8dea19cf5c879c"
   dependencies:
@@ -2202,16 +2167,6 @@ fill-range@^2.1.0:
     repeat-element "^1.1.2"
     repeat-string "^1.5.2"
 
-finalhandler@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-0.5.1.tgz#2c400d8d4530935bc232549c5fa385ec07de6fcd"
-  dependencies:
-    debug "~2.2.0"
-    escape-html "~1.0.3"
-    on-finished "~2.3.0"
-    statuses "~1.3.1"
-    unpipe "~1.0.0"
-
 finalhandler@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/finalhandler/-/finalhandler-1.0.0.tgz#b5691c2c0912092f18ac23e9416bde5cd7dc6755"
@@ -2283,10 +2238,6 @@ form-data@~2.1.1:
 forwarded@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.0.tgz#19ef9874c4ae1c297bcf078fde63a09b66a84363"
-
-fresh@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/fresh/-/fresh-0.3.0.tgz#651f838e22424e7566de161d8358caa199f83d4f"
 
 fresh@0.5.0:
   version "0.5.0"
@@ -4027,21 +3978,13 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
-qs@6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b"
-
 qs@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625"
 
-qs@6.3.1:
+qs@6.3.1, qs@~6.3.0:
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.1.tgz#918c0b3bcd36679772baf135b1acb4c1651ed79d"
-
-qs@~6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442"
 
 querystring-es3@^0.2.0:
   version "0.2.1"
@@ -4376,10 +4319,6 @@ rx@2.5.3:
   version "2.5.3"
   resolved "https://registry.yarnpkg.com/rx/-/rx-2.5.3.tgz#21adc7d80f02002af50dae97fd9dbf248755f566"
 
-rx@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/rx/-/rx-4.1.0.tgz#a5f13ff79ef3b740fe30aa803fb09f98805d4782"
-
 rx@~2.3.24:
   version "2.3.25"
   resolved "https://registry.yarnpkg.com/rx/-/rx-2.3.25.tgz#2f7c0550532777b41fa692bb790a7886eaff9731"
@@ -4416,24 +4355,6 @@ semver-diff@^2.0.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-send@0.14.2:
-  version "0.14.2"
-  resolved "https://registry.yarnpkg.com/send/-/send-0.14.2.tgz#39b0438b3f510be5dc6f667a11f71689368cdeef"
-  dependencies:
-    debug "~2.2.0"
-    depd "~1.1.0"
-    destroy "~1.0.4"
-    encodeurl "~1.0.1"
-    escape-html "~1.0.3"
-    etag "~1.7.0"
-    fresh "0.3.0"
-    http-errors "~1.5.1"
-    mime "1.3.4"
-    ms "0.7.2"
-    on-finished "~2.3.0"
-    range-parser "~1.2.0"
-    statuses "~1.3.1"
-
 send@0.15.0:
   version "0.15.0"
   resolved "https://registry.yarnpkg.com/send/-/send-0.15.0.tgz#f0185d6466fa76424b866f3d533e2d19dd0aaa39"
@@ -4460,15 +4381,6 @@ serve-static@1.12.0:
     escape-html "~1.0.3"
     parseurl "~1.3.1"
     send "0.15.0"
-
-serve-static@~1.11.2:
-  version "1.11.2"
-  resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.11.2.tgz#2cf9889bd4435a320cc36895c9aa57bd662e6ac7"
-  dependencies:
-    encodeurl "~1.0.1"
-    escape-html "~1.0.3"
-    parseurl "~1.3.1"
-    send "0.14.2"
 
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"

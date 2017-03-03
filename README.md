@@ -1,6 +1,6 @@
 # supersonic-lobster
 
-Express - Falcor - React - Redux web app
+Express - Graphistry/Falcor - React - Redux web app
 
 ## Board
 
@@ -32,7 +32,7 @@ yarn bundle:dev -- --watch
 
 - [http://redux.js.org/](http://redux.js.org/)
 
-- [https://github.com/ekosz/redux-falcor](https://github.com/ekosz/redux-falcor)
+- ~~[https://github.com/ekosz/redux-falcor](https://github.com/ekosz/redux-falcor)~~ (until v1.6.0)
 
 - [https://github.com/opentable/oc](https://github.com/opentable/oc)
 
@@ -51,7 +51,3 @@ yarn bundle:dev -- --watch
 - [http://moduscreate.com/optimizing-react-es6-webpack-production-build/](http://moduscreate.com/optimizing-react-es6-webpack-production-build/)
 
 - [http://jamesknelson.com/writing-npm-packages-with-es6-using-the-babel-6-cli/](http://jamesknelson.com/writing-npm-packages-with-es6-using-the-babel-6-cli/)
-
-### Similar projects
-
-- [https://github.com/yudppp/react-starter-kit-with-falcor](https://github.com/yudppp/react-starter-kit-with-falcor)
