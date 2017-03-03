@@ -14,9 +14,8 @@ Express - Falcor - React - Redux web app
 
 ```bash
 yarn
-yarn oc
-yarn nodemon
-yarn webpack:dev -- --watch
+yarn start:dev
+yarn bundle:dev -- --watch
 ```
 
 ## Resources
@@ -26,6 +25,8 @@ yarn webpack:dev -- --watch
 - [http://expressjs.com/](http://expressjs.com/)
 
 - [https://netflix.github.io/falcor/](https://netflix.github.io/falcor/)
+
+- [https://github.com/graphistry/falcor](https://github.com/graphistry/falcor)
 
 - [https://facebook.github.io/react/](https://facebook.github.io/react/)
 
@@ -48,6 +49,8 @@ yarn webpack:dev -- --watch
 - [http://redux.js.org/docs/advanced/Middleware.html](http://redux.js.org/docs/advanced/Middleware.html)
 
 - [http://moduscreate.com/optimizing-react-es6-webpack-production-build/](http://moduscreate.com/optimizing-react-es6-webpack-production-build/)
+
+- [http://jamesknelson.com/writing-npm-packages-with-es6-using-the-babel-6-cli/](http://jamesknelson.com/writing-npm-packages-with-es6-using-the-babel-6-cli/)
 
 ### Similar projects
 

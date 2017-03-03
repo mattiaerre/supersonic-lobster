@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react';
 import Message from '../../components/Message/Message';
-import OC from '../../components/OC/OC';
 import Counter from '../../components/Counter/Counter';
 
 const Layout = (props) => { // eslint-disable-line arrow-body-style
-  const { counter, model, ocRegistryBaseUrl } = props;
+  const { counter, model } = props;
   return (
     <div className="Layout">
       <div>
@@ -13,7 +12,6 @@ const Layout = (props) => { // eslint-disable-line arrow-body-style
         <Message message={model.apod.date} />
       </div>
       <div>
-        <OC href={`${ocRegistryBaseUrl}/oc-date-time-now/`} />
         <Counter value={counter} />
       </div>
     </div>
@@ -22,8 +20,7 @@ const Layout = (props) => { // eslint-disable-line arrow-body-style
 
 Layout.propTypes = {
   counter: PropTypes.number.isRequired,
-  model: PropTypes.shape.isRequired,
-  ocRegistryBaseUrl: PropTypes.string.isRequired
+  model: PropTypes.shape.isRequired
 };
 
 export default Layout;

@@ -1,19 +1,13 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { reduxFalcor } from 'redux-falcor';
 import { bindActionCreators } from 'redux';
-import { renderUnloadedComponents } from '../../actions/ocActions';
+import { getFalcorModel } from '../../actions/falcorActions';
 import Layout from '../../components/Layout/Layout';
 
 class App extends React.Component {
   componentDidMount() {
     const { actions } = this.props;
-    actions.renderUnloadedComponents();
-  }
-
-  fetchFalcorDeps() {
-    const { falcor } = this.props;
-    return falcor.get(['apod', ['date', 'explanation', 'media_type', 'url']], ['greeting']);
+    actions.getFalcorModel();
   }
 
   render() {
@@ -28,25 +22,23 @@ class App extends React.Component {
 
 App.propTypes = {
   actions: PropTypes.shape.isRequired,
-  falcor: PropTypes.shape.isRequired,
   model: PropTypes.shape.isRequired
 };
 
 function mapStateToProps(state) {
   return {
     counter: state.counter,
-    model: state.falcor,
-    ocRegistryBaseUrl: state.ocRegistryBaseUrl
+    model: state.falcor
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators({ renderUnloadedComponents }, dispatch)
+    actions: bindActionCreators({ getFalcorModel }, dispatch)
   };
 }
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(reduxFalcor(App));
+)(App);

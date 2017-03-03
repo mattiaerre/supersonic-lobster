@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
-import { reducer as falcorReducer } from 'redux-falcor';
 import initialState from './initialState';
 import * as types from '../constants/actionTypes';
 
-const ocRegistryBaseUrlReducer = (state = initialState.ocRegistryBaseUrl, action) => {
+const falcorReducer = (state = initialState.falcor, action) => {
   switch (action.type) {
-    case types.GET_OC_REGISTRY_BASE_URL:
+    case types.GET_FALCOR_MODEL:
       return action.payload;
     default:
       return state;
@@ -23,7 +22,6 @@ const counterReducer = (state = initialState.counter, action) => {
 
 const rootReducer = combineReducers({
   falcor: falcorReducer,
-  ocRegistryBaseUrl: ocRegistryBaseUrlReducer,
   counter: counterReducer
 });
 

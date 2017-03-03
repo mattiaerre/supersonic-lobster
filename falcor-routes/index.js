@@ -1,5 +1,5 @@
 const greeting = require('./greeting');
-const apod = require('./apod/apod');
+const apod = require('apod-graphistry-falcor-routes');
 
 const falcorRoutes = () => { // eslint-disable-line arrow-body-style
   return []
