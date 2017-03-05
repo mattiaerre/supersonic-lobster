@@ -1,47 +1,35 @@
 body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: palegoldenrod;
-}
-
-.Message, .Counter {
-  background-color: #EEE;
-  padding: 0.5em;
-  margin: 0.5em;
-}
-
-.App {
-  border: 2px solid #EEE;
-  padding: 2em;
-  background-color: darkblue;
-}
-
-.Layout {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.OC {
-  color: blue;
-  background-color: #E99;
-  padding: 0.5em;
-  margin: 0.5em;
-}
-
-.OC > oc-component {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: darkgray;
 }
 
 footer {
   border: 2px solid #EEE;
-  background-color: mediumseagreen;
+  background-color: lightgray;
   padding: 0.5em;
   font-weight: normal;
   display: flex;
   flex-direction: column;
   text-align: right;
+}
+
+.App {
+  border: 2px solid #EEE;
+  padding: 2em;
+  background-color: black;
+}
+
+.Layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Message {
+  background-color: #EEE;
+  opacity: 0.75;
+  padding: 0.5em;
+  margin: 0.5em;
 }
 
 .error-message {
@@ -60,7 +48,6 @@ footer {
 }
 
 .error-message :first-child {
-  color: purple;
   position: relative;
   top: -25%;
 }
@@ -72,10 +59,10 @@ footer {
 .what-did-you-do {
   display: flex;
   justify-content: flex-end;
-  color:darkred;
+  color:darkslateblue;
 }
 
-.what-did-you-do > span{
+.what-did-you-do > span {
   margin-left: 0.5ch;
   padding: 0;
 }

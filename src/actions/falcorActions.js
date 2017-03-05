@@ -3,7 +3,7 @@ import model from './model';
 
 export const getFalcorModel = () => ( // eslint-disable-line import/prefer-default-export
   (dispatch) => {
-    const query = [['apod', ['date', 'explanation', 'media_type', 'url']], ['greeting']];
+    const query = [['apod', ['date', 'explanation', 'media_type', 'title', 'url']]];
     model.get(...query)
       .then(
       (response) => {
