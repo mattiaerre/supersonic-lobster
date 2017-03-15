@@ -8,6 +8,7 @@ const debug = require('debug')('supersonic-lobster:index');
 const falcorPostman = require('falcor-postman');
 const index = require('./routes/index');
 const falcorRoutes = require('./falcor-routes');
+const ocSsrWrapper = require('./middlewares/oc-ssr');
 
 const app = express();
 app.locals.pretty = true;
@@ -19,6 +20,8 @@ app.use(require('express-favicon-short-circuit'));
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/node_modules')));
+
+app.use(ocSsrWrapper({ serverRendering: process.env.OC_REGISTRY_BASE_URL }));
 
 app.use('/', index);
 

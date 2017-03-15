@@ -5,18 +5,19 @@ html(lang="en")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="style.css", rel="stylesheet")
     script(src="feature-toggle/dist/feature-toggle-client.js")
-    script(src=ocRegistryBaseUrl + "/oc-client/client.js" id="script-oc-registry-base-url" data-onerror="false" onerror="(() => { document.getElementById('script-oc-registry-base-url').setAttribute('data-onerror', true); })();")
+    != components['oc-client']
     title= title
   body
-    h1=title
-    #app(data-oc-registry-base-url=ocRegistryBaseUrl)
+    header
+      != components['oc-columbus-header']
+    #app
     footer
       div
         a(href="https://twitter.com/mattiaerre" target="_blank") @mattiaerre
       div.what-did-you-do
         span What did you do
         span
-          oc-component(href=`${ocRegistryBaseUrl}/oc-timeago/?start=2017-02-07`)
+          != components['oc-timeago']
         span today?
       div= title
     #error-message(class="hide error-message")

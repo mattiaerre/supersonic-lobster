@@ -67,3 +67,12 @@ footer {
   margin-left: 0.5ch;
   padding: 0;
 }
+
+.oc-columbus-header {
+  display: flex;
+  align-items: center;
+}
+
+.oc-columbus-header img {
+  width: 75px;
+}
