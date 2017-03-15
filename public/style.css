@@ -80,3 +80,20 @@ footer {
 .oc-columbus-header h1 {
   text-shadow: 2px 2px pink;
 }
+
+.oc-apod {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+div.oc-apod, .oc-apod > div {
+  border: 1px solid darkblue;
+}
+
+.oc-apod > div {
+  padding: 0.5em;
+  margin: 0.5em;
+  background-color: white;
+  opacity: 0.75;
+}

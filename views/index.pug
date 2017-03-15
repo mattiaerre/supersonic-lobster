@@ -4,13 +4,12 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(href="style.css", rel="stylesheet")
-    script(src="feature-toggle/dist/feature-toggle-client.js")
     != components['oc-client']
     title= title
   body
     header
       != components['oc-columbus-header']
-    #app
+    != components['oc-apod']
     footer
       div
         a(href="https://twitter.com/mattiaerre" target="_blank") @mattiaerre
@@ -20,10 +19,3 @@ html(lang="en")
           != components['oc-timeago']
         span today?
       div= title
-    #error-message(class="hide error-message")
-      div
-        div Oh Noes!
-        div
-          a(href="/") &#x21bb;
-    script(src="bundle.js")
-    script(src="index.js")

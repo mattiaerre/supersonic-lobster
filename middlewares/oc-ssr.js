@@ -21,6 +21,10 @@ const ocSsrWrapper = (config) => {
         {
           name: 'oc-timeago',
           parameters: { start: '2017-02-07' }
+        },
+        {
+          name: 'oc-apod',
+          parameters: { apiKey: process.env.NASA_API_KEY }
         }
       ];
 
@@ -40,7 +44,8 @@ const ocSsrWrapper = (config) => {
           const model = {
             'oc-client': htmls[0],
             'oc-columbus-header': htmls[1],
-            'oc-timeago': htmls[2]
+            'oc-timeago': htmls[2],
+            'oc-apod': htmls[3]
           };
           req[OC_SSR] = { components: model }; // eslint-disable-line no-param-reassign
           next();
