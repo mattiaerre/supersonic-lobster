@@ -15,7 +15,7 @@ const ocSsrWrapper = (config) => {
           name: 'oc-columbus-header',
           parameters: {
             title: `${name} v${version}`,
-            logoUrl: '/images/supersonic-lobster-logo.png'
+            logoUrl: '/images/FFFFFF-0.png'
           }
         },
         {

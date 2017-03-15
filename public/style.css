@@ -74,5 +74,9 @@ footer {
 }
 
 .oc-columbus-header img {
-  width: 75px;
+  width: 2em;
+}
+
+.oc-columbus-header h1 {
+  text-shadow: 2px 2px pink;
 }
