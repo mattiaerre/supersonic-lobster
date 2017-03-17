@@ -1,6 +1,6 @@
 # supersonic-lobster
 
-Express - Graphistry/Falcor - React - Redux web app
+Express - OpenComponents web app
 
 ## Board
 
@@ -15,7 +15,6 @@ Express - Graphistry/Falcor - React - Redux web app
 ```bash
 yarn
 yarn start:dev
-yarn bundle:dev -- --watch
 ```
 
 ## Resources
