@@ -1,6 +1,6 @@
 {
   "name": "supersonic-lobster",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "description": "Express - OpenComponents web app",
   "main": "index.js",
   "scripts": {
