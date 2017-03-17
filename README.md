@@ -23,9 +23,9 @@ yarn start:dev
 
 - [http://expressjs.com/](http://expressjs.com/)
 
-- [https://netflix.github.io/falcor/](https://netflix.github.io/falcor/)
+- ~~[https://netflix.github.io/falcor/](https://netflix.github.io/falcor/)~~ (until v1.9.0)
 
-- [https://github.com/graphistry/falcor](https://github.com/graphistry/falcor)
+- ~~[https://github.com/graphistry/falcor](https://github.com/graphistry/falcor)~~ (until v1.6.0)
 
 - [https://facebook.github.io/react/](https://facebook.github.io/react/)
 
@@ -35,7 +35,7 @@ yarn start:dev
 
 - [https://github.com/opentable/oc](https://github.com/opentable/oc)
 
-### OpenComponents
+### OpenComponents registry
 
 - [https://pink-pineapple.herokuapp.com/](https://pink-pineapple.herokuapp.com/)
 
