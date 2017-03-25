@@ -25,6 +25,10 @@ const ocSsrWrapper = (config) => {
         {
           name: 'oc-apod',
           parameters: { apiKey: process.env.NASA_API_KEY }
+        },
+        {
+          name: 'oc-my-next-run',
+          parameters: { id: '2017-03-26' }
         }
       ];
 
@@ -45,7 +49,8 @@ const ocSsrWrapper = (config) => {
             'oc-client': htmls[0],
             'oc-columbus-header': htmls[1],
             'oc-timeago': htmls[2],
-            'oc-apod': htmls[3]
+            'oc-apod': htmls[3],
+            'oc-my-next-run': htmls[4]
           };
           req[OC_SSR] = { components: model }; // eslint-disable-line no-param-reassign
           next();

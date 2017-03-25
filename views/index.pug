@@ -9,7 +9,10 @@ html(lang="en")
   body
     header
       != components['oc-columbus-header']
-    != components['oc-apod']
+    p
+      != components['oc-apod']
+    p
+      != components['oc-my-next-run']
     footer
       div
         a(href="https://twitter.com/mattiaerre" target="_blank") @mattiaerre
@@ -18,4 +21,5 @@ html(lang="en")
         span
           != components['oc-timeago']
         span today?
+      div= timezoneOffset
       div= title
