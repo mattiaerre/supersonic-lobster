@@ -28,7 +28,7 @@ const ocSsrWrapper = (config) => {
         },
         {
           name: 'oc-my-next-run',
-          parameters: { id: '2017-03-26' }
+          parameters: { id: '2017-04-02' }
         },
         {
           name: 'oc-social-media-buttons'
