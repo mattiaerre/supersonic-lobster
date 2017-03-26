@@ -29,6 +29,9 @@ const ocSsrWrapper = (config) => {
         {
           name: 'oc-my-next-run',
           parameters: { id: '2017-03-26' }
+        },
+        {
+          name: 'oc-social-media-buttons'
         }
       ];
 
@@ -50,7 +53,8 @@ const ocSsrWrapper = (config) => {
             'oc-columbus-header': htmls[1],
             'oc-timeago': htmls[2],
             'oc-apod': htmls[3],
-            'oc-my-next-run': htmls[4]
+            'oc-my-next-run': htmls[4],
+            'oc-social-media-buttons': htmls[5]
           };
           req[OC_SSR] = { components: model }; // eslint-disable-line no-param-reassign
           next();
