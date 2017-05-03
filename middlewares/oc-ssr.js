@@ -32,6 +32,10 @@ const ocSsrWrapper = (config) => {
         },
         {
           name: 'oc-social-media-buttons'
+        },
+        {
+          name: 'oc-ua-tracking-code',
+          parameters: { trackingId: process.env.TRACKING_ID }
         }
       ];
 
@@ -54,7 +58,8 @@ const ocSsrWrapper = (config) => {
             'oc-timeago': htmls[2],
             'oc-apod': htmls[3],
             'oc-my-next-run': htmls[4],
-            'oc-social-media-buttons': htmls[5]
+            'oc-social-media-buttons': htmls[5],
+            'oc-ua-tracking-code': htmls[6]
           };
           req[OC_SSR] = { components: model }; // eslint-disable-line no-param-reassign
           next();
