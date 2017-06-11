@@ -27,9 +27,9 @@ yarn start:dev
 
 - ~~[https://github.com/graphistry/falcor](https://github.com/graphistry/falcor)~~ (until v1.6.0)
 
-- [https://facebook.github.io/react/](https://facebook.github.io/react/)
+- ~~[https://facebook.github.io/react/](https://facebook.github.io/react/)~~ (until v1.13.3)
 
-- [http://redux.js.org/](http://redux.js.org/)
+- ~~[http://redux.js.org/](http://redux.js.org/)~~ (until v1.13.3)
 
 - ~~[https://github.com/ekosz/redux-falcor](https://github.com/ekosz/redux-falcor)~~ (until v1.6.0)
 
