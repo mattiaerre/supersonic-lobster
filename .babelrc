@@ -1,7 +1,5 @@
 {
   "presets": [
-    "latest",
-    "react",
-    "stage-1"
+    "latest"
   ]
 }

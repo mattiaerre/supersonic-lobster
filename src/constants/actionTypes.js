@@ -1,2 +1,0 @@
-export const GET_FALCOR_MODEL = 'GET_FALCOR_MODEL';
-export const SET_COUNTER = 'SET_COUNTER';

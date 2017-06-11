@@ -1,12 +1,10 @@
 {
   "extends": "airbnb",
   "rules": {
-    "comma-dangle": 0,
-    "react/jsx-filename-extension": 0
+    "comma-dangle": 0
   },
   "env": {
     "node": true,
-    "browser": true,
     "jest": true
   },
   "parser": "babel-eslint"
