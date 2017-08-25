@@ -13,8 +13,8 @@ Express - OpenComponents web app
 #### Dev
 
 ```bash
-yarn
-yarn start:dev
+npm
+npm run start:dev
 ```
 
 ## Resources
