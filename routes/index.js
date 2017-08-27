@@ -7,7 +7,11 @@ router.get('/', (req, res) => {
   const model = {
     ocRegistryBaseUrl: process.env.OC_REGISTRY_BASE_URL,
     title: `${name} v${version}`,
-    components: req['oc-ssr'].components
+    components: req['oc-ssr'].components,
+    address: {
+      'x-forwarded-for': req.headers['x-forwarded-for'],
+      remoteAddress: req.connection.remoteAddress
+    }
   };
   res.render('index', model);
 });

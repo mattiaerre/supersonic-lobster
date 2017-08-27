@@ -1,7 +1,8 @@
 {
   "extends": "airbnb",
   "rules": {
-    "comma-dangle": 0
+    "comma-dangle": 0,
+    "jsx-a11y/href-no-hash": "off"
   },
   "env": {
     "node": true,
